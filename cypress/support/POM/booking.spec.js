@@ -13,19 +13,20 @@ export class Booking{
         return cy.get('span').contains("First Name")
     }
     static lastName(){
-        return cy.get('input[name="lastname"]')
+        //return cy.get('input[name="lastname"]')
+        return cy.get('span').contains("Last Name")
     }
     static email(){
-        return cy.get('input[name="email"]')
+        return cy.get('span').contains("Email")
     }
     static confirmEmail(){
-        return cy.get('input[name="confirmemail"]')
+        return cy.get('span').contains("Confirm")
     }
     static phone(){
-        return cy.get('input[name="phone"]')
+        return cy.get('span').contains("Contact Number")
     }
     static address(){
-        return cy.get('input[name="address"]')
+        return cy.get('span').contains("Address")
     }
     static country(){
         return cy.get('.chosen-single > span')

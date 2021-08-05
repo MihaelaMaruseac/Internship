@@ -1,3 +1,4 @@
 {
-    "baseUrl": "https://www.phptravels.net/home"
+    "baseUrl": "https://www.phptravels.net/home",
+    "chromeWebSecurity": false
 }
