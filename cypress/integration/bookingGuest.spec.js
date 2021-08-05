@@ -30,7 +30,7 @@ describe('Test booking a journey as a Guest', () => {
       it('Booking a journey with empty fields', () => {
         Booking.getJourney().click()
         Booking.getSubmitButton().contains('Book Now').click({force:true})
-        Booking.getSubmitButton().contains('CONFIRM THIS BOOKING').click()
+        Booking.getSubmitButton().contains('Confirm this booking', { matchCase: false }).click()
         Booking.getAlert().should('have.text', 'Email is required\nEmail is required\nFirst Name is required\nLast Name is required\n')
       })
 
