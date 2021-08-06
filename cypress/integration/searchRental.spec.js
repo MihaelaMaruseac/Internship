@@ -12,8 +12,7 @@ describe('Search rentals using the second window', ()=> {
         Rentals.rentalType()
         Rentals.adults().click({force:true})
         Rentals.searchButton().click({force:true})
-        //Rentals.result().should('contain', "No Results Found")
+        Rentals.result().should('contain', "No Results Found")
     })
-
 
 })

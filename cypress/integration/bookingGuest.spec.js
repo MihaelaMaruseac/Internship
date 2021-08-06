@@ -8,6 +8,7 @@ describe('Test booking a journey as a Guest', () => {
     })
   
       it('Booking a journey with valid data', () => {
+        Booking.getDocument().should('have.property', 'charset').and('eq', 'UTF-8')
         Booking.getJourney().click()
        //Booking.changeDate().click({force:true}).type('{selectall}').clear().type('27/08/2021{enter}')
        Booking.changeDate().get('.-bottom-left-:nth-child(1) .datepicker--cell-day:nth-child(27)').click({force:true})

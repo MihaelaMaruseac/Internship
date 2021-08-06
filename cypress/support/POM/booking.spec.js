@@ -46,4 +46,7 @@ export class Booking{
     static getAlert(){
         return cy.get('.result > .alert')
     }
+    static getDocument(){
+        return cy.document()
+    }
 }
