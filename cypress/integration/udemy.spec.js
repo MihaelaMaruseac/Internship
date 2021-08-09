@@ -18,6 +18,23 @@ describe('Tests based on Udemy course', ()=> {
     it('Get first journey using index', () =>{
         General.getFirstJourney().find('.featured-image-grid-item').eq(0).click()
     })
+ 
+    it('Get a journey and log using then', () =>{
+        General.getNile().click().then(() => {
+            console.log('Hi in THEN!')
+        })
+    })
 
+    it('View a journey using const', () =>{
+        const journeyNile= General.getNile()
+        journeyNile.click()
+    })
+
+    it('Log h2 text', () =>{
+        General.geth2().then(($h2Text) =>{
+            const h2Text = $h2Text.text()
+            cy.log('Found h2 text: ' + h2Text)
+        })
+    })
 
 })
