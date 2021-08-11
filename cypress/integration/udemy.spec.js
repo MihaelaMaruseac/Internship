@@ -39,13 +39,13 @@ describe('Tests based on Udemy course', ()=> {
         })
     })
 
-    it.only('Iterating through each element', () =>{
+    it('Iterating through each element', () =>{
         General.getAllCols().each(($el, index) => {
             cy.log("Index: " + index + " : " + $el.text())
         })
     })
 
-    it.only('Iterating and select an element ', () =>{
+    it('Iterating and select an element ', () =>{
         General.getAllCols().each(($el, index) => {
             if($el.text().includes('6 Days Around Thailand')){
                 cy.wrap($el).click()
