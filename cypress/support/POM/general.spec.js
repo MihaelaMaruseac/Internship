@@ -15,4 +15,7 @@ export class General{
     static geth2(){
         return cy.get('h2.float-none').contains('Featured Tours', { matchCase: false })
     }
+    static getAllCols(){
+        return cy.get('div > .col ')
+    }
 }

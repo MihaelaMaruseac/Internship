@@ -28,12 +28,28 @@ describe('Tests based on Udemy course', ()=> {
     it('View a journey using const', () =>{
         const journeyNile= General.getNile()
         journeyNile.click()
+        // recomanded without const
     })
-
-    it('Log h2 text', () =>{
+ 
+    it('Log a h2 text', () =>{
         General.geth2().then(($h2Text) =>{
             const h2Text = $h2Text.text()
             cy.log('Found h2 text: ' + h2Text)
+            expect(h2Text).is.eq('Featured Tours')
+        })
+    })
+
+    it.only('Iterating through each element', () =>{
+        General.getAllCols().each(($el, index) => {
+            cy.log("Index: " + index + " : " + $el.text())
+        })
+    })
+
+    it.only('Iterating and select an element ', () =>{
+        General.getAllCols().each(($el, index) => {
+            if($el.text().includes('6 Days Around Thailand')){
+                cy.wrap($el).click()
+            }
         })
     })
 
