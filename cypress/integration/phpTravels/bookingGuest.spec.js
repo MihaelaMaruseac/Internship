@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { Booking } from "../support/POM/booking.spec"
+import { Booking } from "../../support/POM/booking.spec"
 
 describe('Test booking a journey as a Guest', () => {
     beforeEach(() => {

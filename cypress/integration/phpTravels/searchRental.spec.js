@@ -1,11 +1,12 @@
 /// <reference types="cypress" />
 
-import { Rentals } from "../support/POM/rentals.spec"
+import { Rentals } from "../../support/POM/rentals.spec"
 
 describe('Search rentals using the second window', ()=> {
 
     it('Search for a rental', () => {
         cy.visit('https://phptravels.com/demo/')
+        // handle with multiple browser tabs
         Rentals.accessUrl().invoke('removeAttr','target').click({force:true})
         Rentals.getRentals().click()
         Rentals.searchByHotel().type('Montreal, Canada{enter}')

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { Contact } from "../support/POM/contact.spec"
+import { Contact } from "../../support/POM/contact.spec"
 
 describe('Tests based on Udemy course', ()=> {
     beforeEach(() => {
