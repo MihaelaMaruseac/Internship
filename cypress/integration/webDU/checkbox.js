@@ -25,6 +25,34 @@ describe('Handle with checkboxes, radiobuttons', () => {
             .should('be.checked') 
     })
 
-    
+    it('4. Check and validate specific radiobutton', () =>{
+        WebDriverUniversity.getPageCheckboxes().invoke('removeAttr', 'target').click({force:true})
+        WebDriverUniversity.getRadiobuttons().find("[type='radio']").first().check()
+        WebDriverUniversity.getRadiobuttons().find("[type='radio']").eq(1).check()
+
+        WebDriverUniversity.getRadiobuttons().find("[type='radio']").first().check().should('be.checked') 
+    })
+
+    it('5. Validate the state of specific radiobutton', () =>{
+        WebDriverUniversity.getPageCheckboxes().invoke('removeAttr', 'target').click({force:true})
+        WebDriverUniversity.getRadioLettuce().should('not.be.checked')
+        WebDriverUniversity.getRadioCabbage().should('not.be.checked')
+        WebDriverUniversity.getRadioPumpkin().should('be.checked')
+
+        WebDriverUniversity.getRadioLettuce().check()
+        WebDriverUniversity.getRadioLettuce().should('be.checked')
+        WebDriverUniversity.getRadioPumpkin().should('not.be.checked')
+
+        WebDriverUniversity.getRadioCabbage().should('be.disabled')
+    })
+
+    it('6. Select specific values from dropdown lists', () =>{
+        WebDriverUniversity.getPageCheckboxes().invoke('removeAttr', 'target').click({force:true})
+        WebDriverUniversity.getDropDown1().select('c#')
+        WebDriverUniversity.getDropDown2().select('testng').should('have.value', 'testng')
+        WebDriverUniversity.getDropDown3().select('jquery').contains('JQuery')
+    })
+
+
 
 })
