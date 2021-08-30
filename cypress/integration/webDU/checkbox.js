@@ -53,6 +53,33 @@ describe('Handle with checkboxes, radiobuttons', () => {
         WebDriverUniversity.getDropDown3().select('jquery').contains('JQuery')
     })
 
+    it('7. Select specific prod via autocomplete list', () =>{
+        WebDriverUniversity.getAutocomplete().invoke('removeAttr', 'target').click({force:true})
+        WebDriverUniversity.getAutocompleteList().type('C')
+        WebDriverUniversity.getAllAutoList().each(($el, index, $list) =>{
+            const prod = $el.text()
+            const productToSelect = 'Carrot'
 
+            if(prod === productToSelect){
+                $el.click()
+
+                WebDriverUniversity.getSubmit().click()
+                cy.url().should('include', productToSelect)
+            }
+        }).then(() =>{
+            WebDriverUniversity.getAutocompleteList().clear().type('G')
+            WebDriverUniversity.getAllAutoList().each(($el, index, $list) =>{
+            const prod = $el.text()
+            const productToSelect = 'Grapes'
+
+            if(prod === productToSelect){
+                $el.click()
+
+                WebDriverUniversity.getSubmit().click()
+                cy.url().should('include', productToSelect)
+            }
+            })
+        })
+    })
 
 })

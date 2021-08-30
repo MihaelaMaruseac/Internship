@@ -74,4 +74,40 @@ export class WebDriverUniversity{
     static getDropDown3(){
         return cy.get('[id="dropdowm-menu-3"]')
     }
+
+    static getAutocomplete(){
+        return cy.get('#autocomplete-textfield')
+    }
+
+    static getAutocompleteList(){
+        return cy.get('#myInput')
+    }
+
+    static getAllAutoList(){
+        return cy.get('#myInputautocomplete-list > *')
+    }
+
+    static getSubmit(){
+       return cy.get('#submit-button')
+    }
+
+    static getActions(){
+        return cy.get('#actions')
+    }
+
+    static getDraggable(){
+        return cy.get('#draggable')
+    }
+
+    static getDroppable(){
+        return cy.get('#droppable')
+    }
+
+    static getDoubleClickEl(){
+        return cy.get('#double-click')
+    }
+
+    static getClickBox(){
+        return cy.get('#click-box')
+    }
 }
