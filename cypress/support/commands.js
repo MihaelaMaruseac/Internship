@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import 'cypress-file-upload';
+
+Cypress.Commands.add("addProductToBasket", productName =>{
+    cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) =>{
+        if($el.text() === productName){
+            cy.log($el.text())
+            cy.get('.productcart').eq(index).click()
+        }
+    })
+})
