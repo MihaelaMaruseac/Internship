@@ -2,6 +2,5 @@
     "baseUrl": "https://www.phptravels.net/home",
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 10000,
-    "pageLoadTimeout": 30000,
-    "ignoreTestFiles": "*.js"
+    "pageLoadTimeout": 30000
 }
